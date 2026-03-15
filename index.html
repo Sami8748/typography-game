@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Typography Matching Game</title>
+
+<style>
+
+body{
+font-family:Arial;
+text-align:center;
+background:#f4f6f8;
+}
+
+h1{
+color:#2c3e50;
+}
+
+.container{
+display:flex;
+justify-content:center;
+gap:50px;
+margin-top:40px;
+}
+
+.word{
+background:#3498db;
+color:white;
+padding:12px;
+margin:10px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.definition{
+background:#ecf0f1;
+padding:12px;
+margin:10px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.correct{
+background:#2ecc71;
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>จับคู่คำศัพท์ Typography</h1>
+<p>คลิกคำศัพท์ แล้วคลิกคำอธิบายที่ถูกต้อง</p>
+
+<div class="container">
+
+<div>
+
+<div class="word" onclick="selectWord('tracking')">Tracking</div>
+<div class="word" onclick="selectWord('leading')">Leading</div>
+<div class="word" onclick="selectWord('kerning')">Kerning</div>
+
+</div>
+
+<div>
+
+<div class="definition" onclick="checkMatch('tracking')">ระยะห่างระหว่างตัวอักษรทั้งหมด</div>
+<div class="definition" onclick="checkMatch('leading')">ระยะห่างระหว่างบรรทัด</div>
+<div class="definition" onclick="checkMatch('kerning')">ระยะห่างระหว่างตัวอักษรคู่</div>
+
+</div>
+
+</div>
+
+<h2 id="result"></h2>
+
+<script>
+
+let selectedWord = "";
+
+function selectWord(word){
+selectedWord = word;
+}
+
+function checkMatch(definition){
+
+if(selectedWord == definition){
+document.getElementById("result").innerHTML="ถูกต้อง!";
+}else{
+document.getElementById("result").innerHTML="ลองอีกครั้ง";
+}
+
+}
+
+</script>
+
+</body>
+</html>
